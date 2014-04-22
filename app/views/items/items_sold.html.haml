@@ -1,0 +1,17 @@
+%h1 These are the all of the items sold at my garage sale:
+
+.row
+  -@items.each do |item|
+    .col-lg-4.col-md-4.col-sm-4
+      .panel.panel-default.custom_panel
+        %h3= link_to item.name, "/items/#{item.id}"
+        %p= "Description: #{item.description}"
+        %p= "Price: #{item.price}"
+        %p= "Age: #{item.age}"
+        %p= "Level de awesome: #{item.awesome_rating}"
+        -unless item.sold
+          = form_for item, url: "/items/#{item.id}", action: "PUT" do |f|
+            =f.hidden_field :sold, :value => "true"
+            =f.submit "Mark as Sold"
+        -else
+          %h1= "Sold"

@@ -1,0 +1,12 @@
+
+
+
+.col-lg8.col-md-8.col-sm-8.col-sm-offset-2.col-md-offset-2.col-lg-offset-2
+  .panel.panel-default.custom_panel.centered
+    %h1= @item.name
+    %h4= "Description: #{@item.description}"
+    %p= "Price: #{@item.price}"
+    %p= "Age: #{@item.age}"
+    %p= "Age: #{@item.awesome_rating}" 
+    %br
+  %p= link_to "Edit", "/items/#{@item.id}/edit", class: "btn btn-primary form-control"

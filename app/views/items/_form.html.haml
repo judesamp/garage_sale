@@ -1,0 +1,28 @@
+%form
+
+  .form-group
+    .col-sm-12
+      = f.label  :name
+      = f.text_field :name, class: "form-control"
+
+      = f.label :description
+      = f.text_area :description, class: "form-control"
+
+      = f.label "Price, in cents"
+      = f.text_field :price, class: "form-control"
+     
+      = f.label "How old is this item in years?"
+      = f.text_field :age, class: "form-control"
+
+      = f.label :awesome_rating
+      = f.select :awesome_rating, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], {}, {class: "form-control" } 
+
+      %button.btn.btn-primary.form-control.my_edit_button{type: "submit"} Submit
+
+      %p
+
+-if @item
+  .col-sm-12
+    = button_to 'Delete this Item', "/items/#{@item.id}", method: "delete", data: { confirm: "Are you sure?" }, class: "btn btn-primary form-control"
+
+

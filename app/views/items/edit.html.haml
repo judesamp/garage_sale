@@ -1,0 +1,3 @@
+%h3 Edit this item
+= form_for @item, url: "/items/#{@item.id}", action: "PUT" do |f|
+  =render "form", f: f
