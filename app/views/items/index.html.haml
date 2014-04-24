@@ -1,17 +1,24 @@
-%h1 These are the all of the items for sale (and sold ) at my garage sale:
+%h1.title2 All of the items for sale (and sold ):
 
 .row
   -@items.each do |item|
     .col-lg-4.col-md-4.col-sm-4
       .panel.panel-default.custom_panel
-        %h3= link_to item.name, "items/#{item.id}"
-        %p= "Description: #{item.description}"
-        %p= "Price: #{item.price}"
-        %p= "Age: #{item.age}"
-        %p= "Level de awesome: #{item.awesome_rating}"
-        -unless item.sold
-          = form_for item, url: "/items/#{item.id}/mark_as_sold", action: "PATCH" do |f|
-            =f.hidden_field :sold, :value => "true"
-            =f.submit "Mark as Sold"
-        -else
-          %h1= "Sold"
+        
+  
+        .row
+          .col-lg-5.col-md-5.col-sm-5
+            = image_tag item.item_image.url, :class => "item_image .navbar-left"
+          .col-lg-6.col-md-6.col-sm-6
+            %h5.title= link_to item.name, "items/#{item.id}", class: "title_link"
+        .text
+          %p= "#{item.description}"
+          %p= "Price: #{item.price}"
+          %p= "Age: #{item.age}"
+          %p= "Level de awesome: #{item.awesome_rating}"
+          -unless item.sold
+            = form_for item, url: "/items/#{item.id}/mark_as_sold", action: "PATCH" do |f|
+              =f.hidden_field :sold, :value => "true"
+              =f.submit "Mark as Sold"
+          -else
+            %p.sold= "Sold"

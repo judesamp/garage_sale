@@ -17,6 +17,9 @@
       = f.label :awesome_rating
       = f.select :awesome_rating, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], {}, {class: "form-control" } 
 
+      = f.label :item_image
+      = f.file_field :item_image
+
       %button.btn.btn-primary.form-control.my_edit_button{type: "submit"} Submit
 
       %p

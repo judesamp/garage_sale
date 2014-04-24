@@ -56,9 +56,15 @@ class ItemsController < ApplicationController
     end
   end
 
+  def download_item_image
+    @item = Item.find(params[:id])
+    file = @item.item_image
+    send_file file.path
+  end
+
   private
 
   def item_params
-    params.require(:item).permit(:name, :description, :price, :age, :coolness, :awesome_rating, :sold)
+    params.require(:item).permit!
   end
 end

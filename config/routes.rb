@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   resources :items do
     member do
       patch :mark_as_sold
+      get :download_item_image
     end
   end
 

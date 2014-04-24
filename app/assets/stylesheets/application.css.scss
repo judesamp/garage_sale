@@ -23,9 +23,39 @@
 
 .custom_panel {
   height: 275px;
-  padding: 0 14px 0 14px;
+  padding: 0;
 }
 
 .my_edit_button {
   margin-top: 10px;
+}
+
+.item_image {
+  height: 75px;
+  text-align: left;
+  margin: 0;  
+}
+
+.text {
+  padding: 10px 10px 0 10px;
+}
+
+.sold {
+  text-align: center;
+  background: lightblue;
+  color: white;
+  border-radius: 150px;
+}
+
+.title {
+  padding-left: 0px;
+}
+
+.title_link {
+  padding: 0;
+  margin: 0;
+}
+
+.title2 {
+  margin: 5px 0 25px 0;
 }
