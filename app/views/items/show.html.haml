@@ -1,11 +1,13 @@
 .col-lg8.col-md-8.col-sm-8.col-sm-offset-2.col-md-offset-2.col-lg-offset-2
-  .panel.panel-default.custom_panel.centered
-    = image_tag @item.item_image.url
-    %h1= @item.name
-    %h4= "Description: #{@item.description}"
-    %p= "Price: #{@item.price}"
-    %p= "Age: #{@item.age}"
-    %p= "Age: #{@item.awesome_rating}" 
-    %br
+  .panel.panel-default.centered
+    .panel-body
+      = image_tag @item.item_image.url, :class => "item_image .navbar-left padded_right"
+      .show_page_top_text
+        %h1= @item.name
+        %h4= "Description: #{@item.description}"
+      %p= "Price: #{@item.price}"
+      %p= "Age: #{@item.age}"
+      %p= "Age: #{@item.awesome_rating}" 
+      %br
   %p= link_to "Download Image", download_item_image_item_path, class: "btn btn-primary form-control"
   %p= link_to "Edit", "/items/#{@item.id}/edit", class: "btn btn-primary form-control"

@@ -3,14 +3,14 @@
 .row
   -@items.each do |item|
     .col-lg-4.col-md-4.col-sm-4
-      .panel.panel-default.custom_panel
+      .panel.panel-default
         
   
         .row
           .col-lg-5.col-md-5.col-sm-5
             = image_tag item.item_image.url, :class => "item_image .navbar-left"
           .col-lg-6.col-md-6.col-sm-6
-            %h5.title= link_to item.name, "items/#{item.id}", class: "title_link"
+            %h5.title= link_to item.name, "/items/#{item.id}", class: "title_link"
         .text
           %p= "#{item.description}"
           %p= "Price: #{item.price}"
